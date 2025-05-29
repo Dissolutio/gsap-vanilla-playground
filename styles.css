@@ -1,0 +1,63 @@
+.controls {
+  display: grid;
+
+  border: 1px solid red;
+}
+
+/* Global styles come from external css https://codepen.io/GreenSock/pen/gOWxmWG */
+
+body {
+  /* display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 100vh;
+  overflow: hidden; */
+  margin: 0;
+  background-color: #0e100f;
+}
+
+/* .box {
+  display: block;
+  width: 100px;
+  height: 100px;
+}
+
+.greenbox1 {
+  background-color: lightgreen;
+} */
+iframe {
+  /* width: 700px; */
+  width: 300px;
+  height: 300px;
+  /* width: 30px;
+  height: 30px; */
+  overflow: auto;
+  padding: 0;
+  margin: 0;
+}
+
+svg {
+  display: none;
+  position: relative;
+  display: block;
+  margin: 0;
+  background-color: #1d1d1d;
+  /* width: 700px; */
+  /* max-height: 70vh; */
+}
+
+#utgar-logo,
+#ullar-logo,
+#vydar-logo {
+  visibility: hidden;
+}
+
+
+
+#play {
+  position: relative;
+  display: block;
+  width: 100px;
+  margin: 20px auto;
+  padding: 10px;
+}
