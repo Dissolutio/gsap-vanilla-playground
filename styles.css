@@ -41,17 +41,10 @@ svg {
   position: relative;
   display: block;
   margin: 0;
-  background-color: #1d1d1d;
+  background-color: #FFF;
   /* width: 700px; */
   /* max-height: 70vh; */
 }
-
-#utgar-logo,
-#ullar-logo,
-#vydar-logo {
-  visibility: hidden;
-}
-
 
 
 #play {
