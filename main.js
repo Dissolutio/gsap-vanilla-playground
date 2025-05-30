@@ -4,12 +4,13 @@ let currentGeneral = 'ullar'
 
 function getNextGeneral(currentGeneral) {
   return {
+    ['volarak']: 'thormun',
     ['thormun']: 'jandar',
     ['jandar']: 'valkrill',
     ['valkrill']: 'vydar',
     ['vydar']: 'utgar',
     ['utgar']: 'ullar',
-    ['ullar']: 'thormun',
+    ['ullar']: 'volarak',
   }[currentGeneral]
 }
 
@@ -33,7 +34,24 @@ function playNextAnimation(nextGeneral) {
         scaleY: 0.85,
       }, 0)
   }
-  //  VALKRILL GETS SCALED DOWN
+  if (nextGeneral === 'volarak') {
+    gsap.timeline()
+      .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
+        duration: 1,
+        morphSVG: {
+          shape: "#volarak-logo",
+        },
+      }, 0)
+      .to("#morphTarget", {
+        duration: 0.1,
+        fill: "#9da939",
+      }, 0)
+      .to("#morphTarget", {
+        duration: 1,
+        scaleX: 0.96,
+        scaleY: 0.96,
+      }, 0)
+  }
   if (nextGeneral === 'valkrill') {
     gsap.timeline()
       .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
@@ -45,10 +63,6 @@ function playNextAnimation(nextGeneral) {
       .to("#morphTarget", {
         duration: 0.1,
         fill: "#cf9942",
-      }, 0)
-      .to("#morphTarget", {
-        duration: 0.65,
-        scale: 0.21,
       }, 0)
   }
   if (nextGeneral === 'jandar') {
