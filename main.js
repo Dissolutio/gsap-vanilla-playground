@@ -4,17 +4,77 @@ let currentGeneral = 'ullar'
 
 function getNextGeneral(currentGeneral) {
   return {
+    ['revna']: 'aquilla',
+    ['aquilla']: 'einar',
+    ['einar']: 'volarak',
     ['volarak']: 'thormun',
     ['thormun']: 'jandar',
     ['jandar']: 'valkrill',
     ['valkrill']: 'vydar',
     ['vydar']: 'utgar',
     ['utgar']: 'ullar',
-    ['ullar']: 'volarak',
+    ['ullar']: 'revna',
   }[currentGeneral]
 }
 
 function playNextAnimation(nextGeneral) {
+  //  REVNA 
+  if (nextGeneral === 'revna') {
+    gsap.timeline()
+      .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
+        duration: 1,
+        morphSVG: {
+          shape: "#revna-logo",
+        },
+      }, 0)
+      .to("#morphTarget", {
+        duration: 0.1,
+        fill: "#c7c3aa",
+      }, 0)
+      .to("#morphTarget", {
+        duration: 1,
+        scaleX: 1,
+        scaleY: 1,
+      }, 0)
+  }
+  //  AQUILLA GETS SCALED-X up
+  if (nextGeneral === 'aquilla') {
+    gsap.timeline()
+      .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
+        duration: 1,
+        morphSVG: {
+          shape: "#aquilla-logo",
+        },
+      }, 0)
+      .to("#morphTarget", {
+        duration: 0.1,
+        fill: "#cab800",
+      }, 0)
+      .to("#morphTarget", {
+        duration: 1,
+        scaleX: 1.2,
+        scaleY: 1,
+      }, 0)
+  }
+  //  EINAR GETS SCALED-Y DOWN
+  if (nextGeneral === 'einar') {
+    gsap.timeline()
+      .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
+        duration: 1,
+        morphSVG: {
+          shape: "#einar-logo",
+        },
+      }, 0)
+      .to("#morphTarget", {
+        duration: 0.1,
+        fill: "#582c67",
+      }, 0)
+      .to("#morphTarget", {
+        duration: 1,
+        scaleX: 1,
+        scaleY: 0.85,
+      }, 0)
+  }
   //  THORMUN GETS SCALED-Y DOWN
   if (nextGeneral === 'thormun') {
     gsap.timeline()
@@ -34,6 +94,8 @@ function playNextAnimation(nextGeneral) {
         scaleY: 0.85,
       }, 0)
   }
+
+  //  VOLARAK: SCALEX up and SCALEY down
   if (nextGeneral === 'volarak') {
     gsap.timeline()
       .to(MorphSVGPlugin.convertToPath("#morphTarget"), {
@@ -48,7 +110,7 @@ function playNextAnimation(nextGeneral) {
       }, 0)
       .to("#morphTarget", {
         duration: 1,
-        scaleX: 0.96,
+        scaleX: 1.1,
         scaleY: 0.96,
       }, 0)
   }
@@ -62,7 +124,11 @@ function playNextAnimation(nextGeneral) {
       }, 0)
       .to("#morphTarget", {
         duration: 0.1,
-        fill: "#cf9942",
+        fill: "#A5A03B",
+      }, 0)
+      .to("#morphTarget", {
+        duration: 1,
+        scale: 1,
       }, 0)
   }
   if (nextGeneral === 'jandar') {
